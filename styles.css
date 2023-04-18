@@ -13,9 +13,11 @@ body {
 header {
   background: #4c9ac1;
   text-align: center;
-  /*position: fixed;*/
-  width: 100%;
-  z-index: 1000;
+  position: fixed;
+  top: 0; /* Add this line */
+  left: 0; /* Add this line */
+  width: 100%; /* Add this line */
+  z-index: 100; /* Add this line */
 }
 
 header nav {
@@ -67,6 +69,7 @@ header a:hover {
 }
 
 main {
+  padding-top: 80px;
   padding: 4rem 2rem;
   margin-top: 8rem;
 }
