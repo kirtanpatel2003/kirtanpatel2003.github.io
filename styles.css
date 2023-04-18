@@ -21,7 +21,7 @@ header {
 }
 
 header nav {
-  padding-top: 120px;
+  
   display: flex;
   justify-content: space-around;
 }
@@ -29,34 +29,32 @@ header nav {
 header nav ul {
   display: flex;
   list-style-type: none;
-  padding-top: 120px;
+  
   padding: 0;
   margin: 0;
 }
 
 header nav ul li {
-  padding-top: 120px;
+  
   padding: 1rem;
 }
 
 header nav ul li a {
-  padding-top: 120px;
+  
   color: white;
   text-decoration: none;
 }
 
 header nav ul li a:hover {
-  padding-top: 120px;
+  
   text-decoration: underline;
 }
 
 .header-content {
-  padding-top: 120px;
   padding: 1rem;
 }
 
 header h1 {
-  padding-top: 120px;
   color: white;
   margin: 0;
 }
@@ -99,8 +97,8 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 120px; /* Adjust this value according to the height of your header */
-  margin-top: -120px; /* Negative value of the height */
+  height: 200px; /* Adjust this value according to the height of your header */
+  margin-top: -200px; /* Negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
