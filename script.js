@@ -1,10 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.getElementsByTagName("section");
-  const sectionHeaders = document.getElementsByTagName("h2");
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('header nav ul li a');
 
-  for (let i = 0; i < sectionHeaders.length; i++) {
-    sectionHeaders[i].addEventListener("click", function () {
-      sections[i].classList.toggle("hidden");
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = event.target.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      const headerOffset = document.querySelector('header').offsetHeight;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     });
-  }
+  });
 });
