@@ -22,50 +22,49 @@ header p {
   margin-top: 0.5rem;
 }
 
-header a {color: white;
-text-decoration: none;
-}
-
+header a {
+  color: white;
+  text-decoration: none;
+ }
 header a:hover {
 text-decoration: underline;
 }
-
 main {
 padding: 2rem;
 }
 
 h2 {
-font-size: 1.4rem;
+  	font-size: 1.4rem;
 border-bottom: 2px solid #4c9ac1;
 padding-bottom: 0.3rem;
 }
 
 h3 {
-font-size: 1.2rem;
-margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 section {
-padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 section article {
-margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 section article ul {
-padding-left: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 section article ul li {
-margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 footer {
-background: #4c9ac1;
-text-align: center;
-padding: 1rem;
-color: white;
+  background: #4c9ac1;
+  text-align: center;
+  padding: 1rem;
+  color: white;
 }
 
 .hidden {
@@ -73,7 +72,8 @@ display: none;
 }
 
 @media screen and (max-width: 768px) {
-body {
-font-size: 0.95rem;
+  body {
+    font-size: 0.95rem;
+  }
 }
-}
+
