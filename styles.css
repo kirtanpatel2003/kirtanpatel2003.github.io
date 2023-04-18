@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -9,6 +13,37 @@ body {
 header {
   background: #4c9ac1;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  padding: 1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header-content {
   padding: 1rem;
 }
 
@@ -25,18 +60,21 @@ header p {
 header a {
   color: white;
   text-decoration: none;
- }
-header a:hover {
-text-decoration: underline;
 }
+
+header a:hover {
+  text-decoration: underline;
+}
+
 main {
-padding: 2rem;
+  padding: 4rem 2rem;
+  margin-top: 8rem;
 }
 
 h2 {
-  	font-size: 1.4rem;
-border-bottom: 2px solid #4c9ac1;
-padding-bottom: 0.3rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #4c9ac1;
+  padding-bottom: 0.3rem;
 }
 
 h3 {
@@ -67,13 +105,17 @@ footer {
   color: white;
 }
 
-.hidden {
-display: none;
-}
-
 @media screen and (max-width: 768px) {
   body {
     font-size: 0.95rem;
   }
-}
 
+  header nav ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  header nav ul li {
+    padding: 0.5rem;
+  }
+}
