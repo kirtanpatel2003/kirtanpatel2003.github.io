@@ -17,7 +17,7 @@ header {
   top: 0; /* Add this line */
   left: 0; /* Add this line */
   width: 100%; /* Add this line */
-  z-index: 100; /* Add this line */
+  z-index: 1000; /* Add this line */
 }
 
 header nav {
