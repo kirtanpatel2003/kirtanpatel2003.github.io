@@ -14,10 +14,10 @@ header {
   background: #4c9ac1;
   text-align: center;
   position: fixed;
-  top: 0; /* Add this line */
-  left: 0; /* Add this line */
-  width: 100%; /* Add this line */
-  z-index: 1000; /* Add this line */
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  z-index: 1000;
 }
 
 header nav {
@@ -73,11 +73,12 @@ header a:hover {
   text-decoration: underline;
 }
 
+
 main {
-  padding-top: 80px;
+  padding-top: 4rem;
   padding: 4rem 2rem;
-  margin-top: 8rem;
 }
+
 
 h2 {
   font-size: 1.4rem;
@@ -97,11 +98,12 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 80px; /* Adjust this value according to the height of your header */
-  margin-top: -80px; /* Negative value of the height */
+  height: 100px; /* Adjusted height value */
+  margin-top: -100px; /* Adjusted negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
+
 
 section article {
   margin-bottom: 2rem;
