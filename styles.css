@@ -13,7 +13,7 @@ body {
 header {
   background: #4c9ac1;
   text-align: center;
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
   z-index: 1000;
 }
