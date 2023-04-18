@@ -97,8 +97,8 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 200px; /* Adjust this value according to the height of your header */
-  margin-top: -200px; /* Negative value of the height */
+  height: 80px; /* Adjust this value according to the height of your header */
+  margin-top: -80px; /* Negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
