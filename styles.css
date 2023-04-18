@@ -75,9 +75,10 @@ header a:hover {
 
 
 main {
-  padding-top: 4rem;
   padding: 4rem 2rem;
+  margin-top: 8rem;
 }
+
 
 
 h2 {
@@ -98,11 +99,12 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 100px; /* Adjusted height value */
-  margin-top: -100px; /* Adjusted negative value of the height */
+  height: 8rem; /* Adjusted height value */
+  margin-top: -12rem; /* Adjusted negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
+
 
 
 section article {
