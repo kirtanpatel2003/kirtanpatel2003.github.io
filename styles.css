@@ -99,13 +99,11 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 8rem; /* Adjusted height value */
-  margin-top: -12rem; /* Adjusted negative value of the height */
+  height: 110px; /* Adjusted height value */
+  margin-top: -110px; /* Adjusted negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
-
-
 
 section article {
   margin-bottom: 2rem;
