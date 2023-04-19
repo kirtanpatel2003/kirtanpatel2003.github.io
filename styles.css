@@ -6,7 +6,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 100px 0;
+  padding: 100px 0 0 0;
   color: #333;
 }
 
@@ -76,9 +76,8 @@ header a:hover {
 
 main {
   padding: 4rem 2rem;
-  margin-top: 1rem;
+  margin-top: 5rem; /* increase the value to create more space */
 }
-
 
 
 h2 {
