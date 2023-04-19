@@ -74,9 +74,21 @@ header a:hover {
 }
 
 
+/*main {
+  padding: 4rem 2rem;
+  margin-top: 5rem; 
+}*/
+
 main {
   padding: 4rem 2rem;
-  margin-top: 5rem; /* increase the value to create more space */
+  margin-top: 100px; /* adjust the value to match the height of the header */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100% - 100px); /* adjust the value to match the height of the header */
 }
 
 
