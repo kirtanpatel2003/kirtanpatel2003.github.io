@@ -99,8 +99,8 @@ section {
 section::before {
   content: "";
   display: block;
-  height: 110px; /* Adjusted height value */
-  margin-top: -110px; /* Adjusted negative value of the height */
+  height: 140px; /* Adjusted height value */
+  margin-top: -140px; /* Adjusted negative value of the height */
   visibility: hidden;
   pointer-events: none;
 }
