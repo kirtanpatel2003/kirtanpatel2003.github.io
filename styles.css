@@ -73,12 +73,6 @@ header a:hover {
   text-decoration: underline;
 }
 
-
-/*main {
-  padding: 4rem 2rem;
-  margin-top: 5rem; 
-}*/
-
 main {
   padding: 4rem 2rem;
   margin-top: 100px; /* adjust the value to match the height of the header */
@@ -129,11 +123,11 @@ section article ul li {
 }
 
 footer {
-  background: #4c9ac1;
-  text-align: center;
-  padding: 1rem;
-  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
 
 @media screen and (max-width: 768px) {
   body {
