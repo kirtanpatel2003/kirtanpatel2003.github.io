@@ -50,6 +50,11 @@
   max-width: 200px; /* Adjust the max-width as per your preference */
 }
 
+/* styles.css */
+.sidebar nav ul li a.active-link {
+  color: #ff6347;  /* choose a color that stands out */
+}
+
 /* Adjusting main styles to accommodate the sidebar */
 main {
   margin-left: 300px;
@@ -66,11 +71,3 @@ footer {
   color: white;
 }
 
-/* Adding new style for active section */
-section.active {
-  display: block;
-}
-
-section:not(.active) {
-  display: none;
-}
