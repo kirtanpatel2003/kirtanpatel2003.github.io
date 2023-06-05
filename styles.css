@@ -50,6 +50,8 @@ header nav ul li a:hover {
 }
 
 .header-content {
+  position: fixed;
+  width: 300px;
   padding: 1rem;
 }
 
