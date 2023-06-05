@@ -47,7 +47,10 @@
 /* Adjusting main styles to accommodate the sidebar */
 main {
   margin-left: 300px;
-  color: black;
+  text-align: center;
+  padding: 1rem;
+  background: #4c9ac1;
+  color: white;
 }
 
 footer {
