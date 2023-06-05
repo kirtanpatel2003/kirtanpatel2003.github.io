@@ -11,6 +11,7 @@ body {
 }
 
 header {
+  position: fixed;
   text-align: center;
   background: #4c9ac1;
 }
