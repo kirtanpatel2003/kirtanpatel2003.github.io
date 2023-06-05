@@ -72,8 +72,10 @@ footer {
 }
 
 section {
+    padding-top: 70px; /* adjust this value to your need */
     margin-bottom: 20px;
 }
+
 
 html {
     scroll-behavior: smooth;
