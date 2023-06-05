@@ -1,34 +1,69 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* Adding new styles for the sidebar */
 .sidebar {
-    position: fixed;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  background: #4c9ac1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+.sidebar h1 {
+  margin: 0;
+}
+
+.sidebar p {
+  margin-top: 0.5rem;
 }
 
 .sidebar a {
-    color: #fff;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-.sidebar .header-content {
-    text-align: center;
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.main {
-    margin-left: 220px;
-    padding: 20px;
+.sidebar nav ul li {
+  padding: 1rem;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .header-content .profile-photo {
+  width: 100%;
+  height: auto;
+  max-width: 200px; /* Adjust the max-width as per your preference */
+}
+
+/* Adjusting main styles to accommodate the sidebar */
+main {
+  margin-left: 300px;
+  text-align: center;
+  padding: 1rem;
+  color: black;
+}
+
+footer {
+  margin-left: 300px;
+  text-align: center;
+  padding: 1rem;
+  background: #4c9ac1;
+  color: white;
 }
 
 section {
