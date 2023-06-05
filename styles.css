@@ -6,47 +6,45 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 100px 0 0 0;
+  padding: 0;
   color: #333;
 }
 
 header {
-  background: #4c9ac1;
   text-align: center;
-  position: fixed;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  z-index: 1000;
+  background: #4c9ac1;
 }
 
 header nav {
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #4c9ac1;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
 }
 
 header nav ul {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
-  
   padding: 0;
   margin: 0;
 }
 
 header nav ul li {
-  
   padding: 1rem;
 }
 
 header nav ul li a {
-  
   color: white;
   text-decoration: none;
 }
 
 header nav ul li a:hover {
-  
   text-decoration: underline;
 }
 
@@ -75,15 +73,11 @@ header a:hover {
 
 main {
   padding: 4rem 2rem;
-  margin-top: 100px; /* adjust the value to match the height of the header */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: calc(100% - 100px); /* adjust the value to match the height of the header */
+  margin-left: 200px; /* Adjust the value based on your needs */
 }
+
+/* Rest of the CSS code */
+
 
 
 h2 {
