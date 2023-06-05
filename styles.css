@@ -1,31 +1,22 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 100px 0 0 0;
-  color: #333;
-}
-
+/* Adding new styles for the sidebar */
 .sidebar {
   position: fixed;
-  width: 200px;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 300px;
   background: #4c9ac1;
-  padding: 1rem;
+  color: white;
   text-align: center;
+  padding: 20px;
+  overflow: auto;
 }
 
 .sidebar h1 {
-  color: white;
   margin: 0;
 }
 
 .sidebar p {
-  color: white;
   margin-top: 0.5rem;
 }
 
@@ -34,42 +25,34 @@ body {
   text-decoration: none;
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-header {
-  position: fixed;
-  top: 0; 
-  left: 200px;  /* Matches the width of the sidebar */
-  width: calc(100% - 200px);  /* Adjusts for the width of the sidebar */
-  background: #4c9ac1;
-  padding: 1rem;
-  color: white;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
+.sidebar nav ul {
+  list-style-type: none;
   padding: 0;
-  display: flex;
-  justify-content: space-around;
+  margin: 0;
 }
 
-nav a {
+.sidebar nav ul li {
+  padding: 1rem;
+}
+
+.sidebar nav ul li a {
   color: white;
   text-decoration: none;
 }
 
-nav a:hover {
+.sidebar nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* Adjusting main styles to accommodate the sidebar */
 main {
-  margin-left: 200px; /* Matches the width of the sidebar */
+  margin-left: 300px;
 }
 
-[data-aos] {
-  opacity: 0;
-  transition-property: opacity;
+footer {
+  margin-left: 300px;
+  text-align: center;
+  padding: 1rem;
+  background: #4c9ac1;
+  color: white;
 }
