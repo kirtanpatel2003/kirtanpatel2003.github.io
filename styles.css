@@ -10,136 +10,66 @@ body {
   color: #333;
 }
 
-header {
-  background: #4c9ac1;
-  text-align: center;
+.sidebar {
   position: fixed;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  z-index: 1000;
-}
-
-header nav {
-  
-  display: flex;
-  justify-content: space-around;
-}
-
-header nav ul {
-  display: flex;
-  list-style-type: none;
-  
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li {
-  
+  width: 200px;
+  height: 100%;
+  background: #4c9ac1;
   padding: 1rem;
+  text-align: center;
 }
 
-header nav ul li a {
-  
-  color: white;
-  text-decoration: none;
-}
-
-header nav ul li a:hover {
-  
-  text-decoration: underline;
-}
-
-.header-content {
-  padding: 1rem;
-}
-
-header h1 {
+.sidebar h1 {
   color: white;
   margin: 0;
 }
 
-header p {
+.sidebar p {
   color: white;
   margin-top: 0.5rem;
 }
 
-header a {
+.sidebar a {
   color: white;
   text-decoration: none;
 }
 
-header a:hover {
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: fixed;
+  top: 0; 
+  left: 200px;  /* Matches the width of the sidebar */
+  width: calc(100% - 200px);  /* Adjusts for the width of the sidebar */
+  background: #4c9ac1;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
   text-decoration: underline;
 }
 
 main {
-  padding: 4rem 2rem;
-  margin-top: 100px; /* adjust the value to match the height of the header */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: calc(100% - 100px); /* adjust the value to match the height of the header */
+  margin-left: 200px; /* Matches the width of the sidebar */
 }
 
-
-h2 {
-  font-size: 1.4rem;
-  border-bottom: 2px solid #4c9ac1;
-  padding-bottom: 0.3rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-}
-
-section {
-  padding: 2rem 0;
-}
-
-section::before {
-  content: "";
-  display: block;
-  height: 140px; /* Adjusted height value */
-  margin-top: -140px; /* Adjusted negative value of the height */
-  visibility: hidden;
-  pointer-events: none;
-}
-
-section article {
-  margin-bottom: 2rem;
-}
-
-section article ul {
-  padding-left: 1.5rem;
-}
-
-section article ul li {
-  margin-bottom: 0.5rem;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 0.95rem;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    display: none;
-  }
-
-  header nav ul li {
-    padding: 0.5rem;
-  }
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity;
 }
