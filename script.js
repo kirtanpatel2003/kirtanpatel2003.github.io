@@ -1,40 +1,28 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  AOS.init();
-
   const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("header nav ul li a");
 
-  window.addEventListener("scroll", () => {
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
+  function setActiveSection() {
+    const scrollPosition = window.pageYOffset;
+
+    sections.forEach(function(section) {
+      const sectionTop = section.offsetTop - 50;
       const sectionHeight = section.offsetHeight;
-      const scrollPosition = window.pageYOffset;
 
-      if (
-        scrollPosition >= sectionTop - window.innerHeight * 0.5 &&
-        scrollPosition < sectionTop + sectionHeight - window.innerHeight * 0.5
-      ) {
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         section.classList.add("active");
+        navLinks.forEach(function(link) {
+          if (link.getAttribute("href") === "#" + section.id) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
       } else {
         section.classList.remove("active");
       }
     });
-  });
+  }
 
-  const navLinks = document.querySelectorAll("nav ul li a");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const targetId = event.target.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-      const headerOffset = document.querySelector(".header-content").offsetHeight;
-      const elementPosition = targetElement.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    });
-  });
+  window.addEventListener("scroll", setActiveSection);
 });
