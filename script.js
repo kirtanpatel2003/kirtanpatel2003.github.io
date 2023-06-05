@@ -10,6 +10,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 AOS.init();
 
-document.querySelector('.menu-toggle').addEventListener('click', function () {
-  document.querySelector('.sidebar').classList.toggle('active');
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    menuToggle.classList.toggle('active');
 });
