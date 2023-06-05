@@ -47,6 +47,8 @@
 /* Adjusting main styles to accommodate the sidebar */
 main {
   margin-left: 300px;
+  text-align: center;
+  padding: 1rem;
   color: black;
 }
 
