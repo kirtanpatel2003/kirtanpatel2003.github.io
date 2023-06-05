@@ -9,3 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 AOS.init();
+
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+  document.querySelector('.sidebar').classList.toggle('active');
+});
