@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  AOS.init();
+
   const navLinks = document.querySelectorAll('header nav ul li a');
 
   navLinks.forEach((link) => {
