@@ -50,6 +50,14 @@
   max-width: 200px; /* Adjust the max-width as per your preference */
 }
 
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
 /* Adjusting main styles to accommodate the sidebar */
 main {
   margin-left: 300px;
