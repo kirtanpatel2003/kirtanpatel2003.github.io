@@ -82,17 +82,22 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        width: 80%;
-        height: 100vh;
-        left: -80%;
-        transition: 0.5s;
-    }
+  .sidebar {
+    width: 0;
+    transition: width .3s ease;
+  }
 
-    .sidebar.active {
-        left: 0;
-    }
+  .sidebar.active {
+    width: 300px;
+  }
+
+  main, footer {
+    margin-left: 0;
+  }
+
+  main.active, footer.active {
+    margin-left: 300px;
+  }
 
     .menu-toggle {
         display: block;
@@ -109,10 +114,5 @@ html {
         font-size: 1.5rem;
         border-radius: 50%;
         z-index: 2;
-    }
-    
-    main.active, footer.active {
-        margin-left: 80%;
-        transition: 0.5s;
     }
 }
