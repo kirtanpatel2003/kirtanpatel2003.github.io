@@ -18,20 +18,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-  const sections = document.querySelectorAll("section");
+// move the sections, checkScroll function, and the scroll event listener outside the DOMContentLoaded event
+const sections = document.querySelectorAll("section");
 
-  function checkScroll() {
-    const triggerBottom = (window.innerHeight / 5) * 4;
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
+function checkScroll() {
+  const triggerBottom = (window.innerHeight / 5) * 4;
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
 
-      if (sectionTop < triggerBottom) {
-        section.classList.remove("hidden");
-      } else {
-        section.classList.add("hidden");
-      }
-    });
-  }
+    if (sectionTop < triggerBottom) {
+      section.classList.remove("hidden");
+    } else {
+      section.classList.add("hidden");
+    }
+  });
+}
 
-  window.addEventListener("scroll", checkScroll);
-});
+window.addEventListener("scroll", checkScroll);
+checkScroll(); // call the function once when the page loads
