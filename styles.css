@@ -50,14 +50,6 @@
   max-width: 200px; /* Adjust the max-width as per your preference */
 }
 
-section {
-  display: none;
-}
-
-section.active {
-  display: block;
-}
-
 /* Adjusting main styles to accommodate the sidebar */
 main {
   margin-left: 300px;
@@ -72,4 +64,13 @@ footer {
   padding: 1rem;
   background: #4c9ac1;
   color: white;
+}
+
+/* Adding new style for active section */
+section.active {
+  display: block;
+}
+
+section:not(.active) {
+  display: none;
 }
