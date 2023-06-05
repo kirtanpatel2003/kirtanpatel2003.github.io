@@ -58,6 +58,11 @@ main {
   color: black;
 }
 
+main section {
+    min-height: 100vh; /* vh stands for "viewport height" and 100vh will be 100% of the viewport height */
+}
+
+
 footer {
   margin-left: 300px;
   text-align: center;
