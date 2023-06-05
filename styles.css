@@ -78,3 +78,35 @@ section {
 html {
     scroll-behavior: smooth;
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: none; /* initially hidden */
+  }
+
+  main, footer {
+    margin-left: 0;
+  }
+
+  .sidebar.active { /* shown when menu button is clicked */
+    display: block;
+  }
+
+  /* Add a hamburger menu icon */
+  .menu-toggle {
+    display: block;
+    background-color: #4c9ac1;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+    padding: 20px;
+    color: white;
+  }
+
+  .menu-toggle i {
+    font-size: 1.5rem;
+  }
+}
