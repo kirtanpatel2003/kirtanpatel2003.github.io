@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const scrollPosition = window.pageYOffset;
 
       if (
-        scrollPosition >= sectionTop - sectionHeight * 0.5 &&
-        scrollPosition < sectionTop + sectionHeight * 0.5
+        scrollPosition >= sectionTop - window.innerHeight * 0.5 &&
+        scrollPosition < sectionTop + sectionHeight - window.innerHeight * 0.5
       ) {
         section.classList.add("active");
       } else {
