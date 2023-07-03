@@ -6,6 +6,35 @@
 <title>Kirtan Patel - Portfolio</title>
 <link rel="stylesheet" href="styles.css">
 <script defer src="scripts.js"></script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -27,19 +56,21 @@
 
 <main>
   <section id="education">
+    <div class="container">
     <h2>Education</h2>
     <h3>University of Illinois at Chicago (UIC)</h3>
     <p>Bachelor of Science in Computer Science, Expected: December 2025</p>
     <h3>Delhi Public School, Gandhinagar</h3>
     <p>Diploma, May 2021</p>
     <!-- Education content here -->
+    </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Programming Languages: C, C++, Python</li>
-      <li>Software/Frameworks: Microsoft SharePoint, Excel, Access, Word, Outlook, PowerPoint, MySQL, HTML, CSS, Adobe Photoshop, NCH Software</li>
+      <li>Programming Languages: Python, C, C++</li>
+      <li>Software/Frameworks: MySQL, HTML, CSS, Microsoft SharePoint, Excel, Access, Word, Outlook, PowerPoint, Adobe Photoshop, NCH Software</li>
       <li>Spoken Language: English, Hindi, Gujarati</li>
     </ul>
     <!-- Skills content here -->
@@ -105,7 +136,7 @@
   </article>
   <article>
     <h3>Secretary – UIC Astronomy Club</h3>
-    <p>February 2022 – Present</p>
+    <p>February 2022 – February 2023</p>
     <ul>
       <li>Assists the President and other officers if needed. Specifically, assists the President in planning and carrying out events, programs, and meetings of the Club.</li>
       <li>Attends most of the meetings and events to the best of their ability.</li>
