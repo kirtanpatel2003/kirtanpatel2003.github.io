@@ -129,6 +129,16 @@ footer {
 }
 
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+
 @media screen and (max-width: 768px) {
   body {
     font-size: 0.95rem;
