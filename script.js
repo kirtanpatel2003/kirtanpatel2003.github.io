@@ -19,16 +19,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Add this to your JavaScript
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('main section');
 
   function checkScroll() {
-    const triggerBottom = window.innerHeight / 5 * 4;
+    const triggerBottom = window.innerHeight / 2;
 
     sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top;
+      const sectionBottom = section.getBoundingClientRect().bottom;
 
-      if (sectionTop < triggerBottom) {
+      if (sectionTop < triggerBottom && sectionBottom > triggerBottom) {
         section.classList.add('visible');
       } else {
         section.classList.remove('visible');
