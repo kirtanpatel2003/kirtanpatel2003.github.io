@@ -83,6 +83,7 @@ main {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   height: calc(100% - 100px); /* adjust the value to match the height of the header */
+  margin-bottom: 100px;
 }
 
 
