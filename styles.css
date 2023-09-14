@@ -75,7 +75,7 @@ header a:hover {
 
 main {
   padding: 4rem 2rem;
-  margin-top: 100px; /* adjust the value to match the height of the header */
+  margin-top: 300px; /* adjust the value to match the height of the header */
   position: fixed;
   width: 100%;
   top: 0;
