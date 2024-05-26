@@ -1,13 +1,19 @@
-const text = "Hello! I'm Kirtan. Welcome to my portfolio site.";
-const typingText = document.getElementById('typewriter-text');
-let index = 0;
-
-function typeWriter() {
-    if (index < text.length) {
-        typingText.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 150);
+window.onload = function() {
+    const keys = document.querySelectorAll('.key');
+    let index = 0;
+    function showKey() {
+        if (index < keys.length) {
+            keys[index].style.opacity = 1;
+            index++;
+            setTimeout(showKey, 300);
+        } else {
+            window.addEventListener('scroll', function() {
+                const name = document.querySelector('.name');
+                if (window.scrollY > 100) {
+                    name.style.opacity = 1;
+                }
+            });
+        }
     }
-}
-
-typeWriter();
+    setTimeout(showKey, 1000);
+};
