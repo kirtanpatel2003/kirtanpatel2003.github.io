@@ -3,27 +3,31 @@ body, html {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: blue;
+    background-color: #282c34;
     color: white;
 }
 
-.typewriter h1 {
-    overflow: hidden;
-    border-right: .15em solid orange;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+.intro-text h1, .name h1 {
+    text-align: center;
+    margin: 20px;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+.keyboard {
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
+.key {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid orange;
+    display: inline-block;
+    opacity: 0;
+}
+
+.name {
+    opacity: 0;
 }
