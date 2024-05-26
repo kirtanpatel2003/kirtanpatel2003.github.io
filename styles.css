@@ -5,7 +5,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #282c34;
+    background-color: blue;
     color: white;
 }
 
