@@ -46,3 +46,11 @@ body, html {
     width: 100%;
     text-align: center;
 }
+
+.typewriter {
+    color: #FFF; /* White color text */
+    font-size: 24px; /* Large enough to be easily readable */
+    margin-top: 20px; /* Space from the keyboard */
+    font-family: 'Courier New', Courier, monospace; /* Consistent font with the keyboard */
+    text-align: center; /* Center the text */
+}
