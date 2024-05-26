@@ -1,19 +1,21 @@
 window.onload = function() {
-    const keys = document.querySelectorAll('.key');
-    let index = 0;
-    function showKey() {
-        if (index < keys.length) {
-            keys[index].style.opacity = 1;
-            index++;
-            setTimeout(showKey, 300);
-        } else {
-            window.addEventListener('scroll', function() {
-                const name = document.querySelector('.name');
-                if (window.scrollY > 100) {
-                    name.style.opacity = 1;
-                }
+    const allKeys = document.querySelectorAll('.key');
+    const specialKeys = document.querySelectorAll('.special');
+    const name = document.querySelector('.name');
+    let showSpecial = false;
+
+    allKeys.forEach(key => {
+        key.style.opacity = 1;
+    });
+
+    window.addEventListener('scroll', function() {
+        if (!showSpecial && window.scrollY > 50) {
+            specialKeys.forEach(key => {
+                key.style.opacity = 1;
             });
+            showSpecial = true;
+        } else if (showSpecial && window.scrollY > 300) {
+            name.style.opacity = 1;
         }
-    }
-    setTimeout(showKey, 1000);
+    });
 };
