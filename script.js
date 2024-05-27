@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     showKeyboard();
-    setTimeout(hideKeyboard, 1000); // Ensure there's a long enough delay to show the keyboard first
+    setTimeout(hideKeyboard, 10000); // Ensure there's a long enough delay to show the keyboard first
 });
