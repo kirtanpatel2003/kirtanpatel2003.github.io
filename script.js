@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index < keys.length) {
             keys[index].style.opacity = 1;
             index++;
-            setTimeout(hideKeyboard, 50); // Speed at which keys appear
+            setTimeout(showKeyboard, 50); // Speed at which keys appear
         }
     }
 
@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the entire sequence
     showKeyboard(); // Start by showing the full keyboard
     // Optionally add a delay here or an event listener to trigger the next step
-    //setTimeout(hideKeyboard, 5); // Example: Hide keyboard after 10 seconds
+    setTimeout(hideKeyboard, 50);
 });
