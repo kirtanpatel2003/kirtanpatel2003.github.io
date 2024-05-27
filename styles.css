@@ -12,7 +12,7 @@ body, html {
     overflow-x: hidden;
 }
 
-.intro-text h1, .name h1 {
+.intro-text h1 {
     text-align: center;
     margin: 20px 0;
 }
@@ -28,28 +28,25 @@ body, html {
     justify-content: center; /* Center align the keys horizontally */
 }
 
+.special-row {
+    display: flex;
+    justify-content: center; /* Centers the special keys horizontally */
+}
+
 .key, .special {
     padding: 10px 16px;
     margin: 4px;
-    background-color: #444; /* Dark key background for keyboard look */
-    border: 1px solid #555; /* Slight border for a 3D key effect */
-    border-radius: 4px; /* Rounded corners for keys */
-    opacity: 0; /* Start with keys hidden */
-    transition: opacity 1s, background-color 0.3s; /* Smooth transitions for effects */
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 4px;
+    opacity: 0; /* Start hidden and will fade in */
+    transition: opacity 1s, background-color 0.3s;
 }
 
 .special {
-    border-color: orange; /* Highlight special keys with a different border color */
-    font-weight: bold; /* Bold to differentiate from other keys */
-    display: inline-flex; /* Ensures special keys align like other keys */
-    justify-content: center; /* Center content inside special keys */
+    border-color: orange; /* Highlight special keys */
+    font-weight: bold;
 }
-
-/* .name {
-    opacity: 0; /* Start with name hidden */
-    margin-top: 20px; /* Space above the name */
-    transition: opacity 1s; /* Smooth transition for visibility */
-} */
 
 .typewriter {
     color: #FFF; /* White color text for visibility */
