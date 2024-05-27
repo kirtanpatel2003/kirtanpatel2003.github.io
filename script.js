@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const keys = document.querySelectorAll('.key, .special');
     const specialKeys = document.querySelectorAll('.special');
-    const name = document.querySelector('.name');
     const typewriterText = document.getElementById('typewriter-text');
     let index = 0;
 
