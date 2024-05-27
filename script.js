@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         specialKeys.forEach(key => key.style.opacity = 1);
         setTimeout(startTypewriter, 1000); // Start the typewriter effect after displaying the name
     }
+
     // Function to start the typewriter effect
     function startTypewriter() {
         const professions = ["Software Engineer", "Data Scientist", "Product Manager", "Web Developer"];
@@ -63,5 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Start the entire sequence
-    setTimeout(hideKeyboard, 2000); // Start by hiding the full keyboard, delay as needed
+    showKeyboard(); // Start by showing the full keyboard
+    // Optionally add a delay here or an event listener to trigger the next step
+    setTimeout(hideKeyboard, 10000); // Example: Hide keyboard after 10 seconds
 });
