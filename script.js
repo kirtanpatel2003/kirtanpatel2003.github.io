@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 key.style.opacity = 0; // Hide all keys except 'special' keys
             }
         });
-        setTimeout(showSpecialKeys, 50); // Delay before showing 'KIRTAN'
+        setTimeout(showSpecialKeys, 5000); // Delay before showing 'KIRTAN'
     }
 
     // Function to show 'KIRTAN' keys horizontally
@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the entire sequence
     showKeyboard(); // Start by showing the full keyboard
     // Optionally add a delay here or an event listener to trigger the next step
-    setTimeout(hideKeyboard, 50);
+    setTimeout(hideKeyboard, 500);
 });
