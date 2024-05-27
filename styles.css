@@ -39,7 +39,7 @@ body, html {
     background-color: #444;
     border: 1px solid #555;
     border-radius: 4px;
-    opacity: 0; /* Initially hidden */
+    opacity: 1; /* Initially hidden */
     transition: opacity 1s, height 0.5s ease, margin 0.5s ease, padding 0.5s ease; /* Add transitions for collapsing */
     height: auto; /* Default height */
 }
