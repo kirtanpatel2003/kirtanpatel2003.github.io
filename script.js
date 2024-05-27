@@ -1,31 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const keys = document.querySelectorAll('.key, .special');
+    const keys = document.querySelectorAll('.key');
     const specialKeys = document.querySelectorAll('.special');
     const typewriterText = document.getElementById('typewriter-text');
     let index = 0;
 
-
-    function showKey() {
-        if (index < keys.length) {
-            keys[index].style.opacity = 1;
-            index++;
-            setTimeout(showKey, 50);
-        } else {
-            setTimeout(hideKeyboard, 2000);
-        }
-    }
-
+    // Function to hide the full keyboard
     function hideKeyboard() {
-        keys.forEach(key => key.style.opacity = 0);
-        setTimeout(showSpecialKeys, 500);
+        keys.forEach(key => {
+            if (!key.classList.contains('special')) {
+                key.style.opacity = 0; // Hide all keys except 'special' keys
+            }
+        });
+        setTimeout(showSpecialKeys, 500); // Delay before showing 'KIRTAN'
     }
 
+    // Function to show 'KIRTAN' keys horizontally
     function showSpecialKeys() {
         specialKeys.forEach(key => key.style.opacity = 1);
-        setTimeout(startTypewriter, 1000);
+        setTimeout(startTypewriter, 1000); // Start the typewriter effect after displaying the name
     }
 
-
+    // Function to start the typewriter effect
     function startTypewriter() {
         const professions = ["Software Engineer", "Data Scientist", "Product Manager", "Web Developer"];
         let current = 0;
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (letterIndex > professions[current].length) {
                 isDeleting = true;
-                setTimeout(type, 2000);
+                setTimeout(type, 2000); // Pause at the end before deleting
             } else if (isDeleting) {
                 currentText = professions[current].substring(0, letterIndex--);
                 typewriterText.textContent = currentText;
@@ -54,18 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (currentText === '') {
                     isDeleting = false;
                     current++;
-                    setTimeout(type, 500);
+                    setTimeout(type, 500); // Pause before starting next text
                 } else {
-                    setTimeout(type, 120);
+                    setTimeout(type, 120); // Speed of deleting
                 }
             } else {
-                setTimeout(type, 200);
+                setTimeout(type, 200); // Speed of typing
             }
         }
 
-        type();
+        type(); // Start the typewriter effect
     }
 
-
-    setTimeout(showKey, 1000);
+    // Start the entire sequence
+    setTimeout(hideKeyboard, 2000); // Start by hiding the full keyboard, delay as needed
 });
