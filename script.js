@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Wait for height, margin, and padding transitions
                 setTimeout(() => {
                     key.style.display = 'none';  // Finally, set display to none
-                }, 500); // Ensure this matches the duration of height/margin/padding transitions
+                }, 50); // Ensure this matches the duration of height/margin/padding transitions
             });
-        }, 1000); // Matches the duration of the opacity transition
+        }, 100); // Matches the duration of the opacity transition
     
         // Delay the appearance of special keys to ensure all transitions are complete
         setTimeout(showSpecialKeys, 2000);
@@ -81,5 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     showKeyboard();
-    setTimeout(hideKeyboard, 5000); // Ensure there's a long enough delay to show the keyboard first
+    setTimeout(hideKeyboard, 2000); // Ensure there's a long enough delay to show the keyboard first
 });
