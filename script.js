@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const keys = document.querySelectorAll('.key, .special');
     const name = document.querySelector('.name');
+    const typewriterText = document.getElementById('typewriter-text');
     let index = 0;
 
     // Function to show each key
@@ -10,20 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
             index++;
             setTimeout(showKey, 50); // Speed at which keys appear
         } else {
-            setTimeout(revealName, 500); // Delay before revealing the name
+            setTimeout(hideKeyboard, 2000); // Delay before hiding the keyboard
         }
-    }
-
-    // Function to reveal the name
-    function revealName() {
-        name.style.opacity = 1;
-        setTimeout(hideKeyboard, 2000); // Delay before hiding the keyboard
     }
 
     // Function to hide the keyboard
     function hideKeyboard() {
         Array.from(keys).forEach(key => key.style.opacity = 0);
-        setTimeout(startTypewriter, 500); // Delay before starting the typewriter effect
+        setTimeout(revealName, 500); // Delay before revealing the name
+    }
+
+    // Function to reveal the name
+    function revealName() {
+        name.style.opacity = 1;
+        setTimeout(startTypewriter, 1000); // Delay before starting the typewriter effect
     }
 
     // Function to start the typewriter effect
@@ -33,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let letterIndex = 0;
         let currentText = '';
         let isDeleting = false;
-        let typewriterText = document.getElementById('typewriter-text');
 
         function type() {
             if (current >= professions.length) {
