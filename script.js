@@ -15,22 +15,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function hideKeyboard() {
         // First, make all keys transparent
-        keys.forEach(key => {
-            key.style.opacity = 0;
-        });
+        keys.forEach(key => key.style.opacity = 0);
     
         // After a delay, collapse the keys to remove their space
         setTimeout(() => {
             keys.forEach(key => {
-                key.style.height = '0';
-                key.style.margin = '0';
-                key.style.padding = '0';
+                key.style.height = '0px'; // Ensure you're setting a measurable unit
+                key.style.margin = '0px';
+                key.style.padding = '0px';
             });
-        }, 500); // Adjust this delay as needed
+        }, 1000); // Ensure this delay allows for the opacity transition to be visible
     
-        // Delay before showing 'KIRTAN' might need to be adjusted depending on how the collapse looks
-        setTimeout(showSpecialKeys, 5000); // Account for the collapse delay
+        // Further delay before showing 'KIRTAN'
+        setTimeout(showSpecialKeys, 6000);
     }
+
 
 
     function showSpecialKeys() {
