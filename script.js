@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 key.style.margin = '0';
                 key.style.padding = '0';
             });
-        }, 1000); // Adjust this delay as needed
+        }, 500); // Adjust this delay as needed
     
         // Delay before showing 'KIRTAN' might need to be adjusted depending on how the collapse looks
-        setTimeout(showSpecialKeys, 4000); // Account for the collapse delay
+        setTimeout(showSpecialKeys, 5000); // Account for the collapse delay
     }
 
 
