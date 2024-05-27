@@ -4,7 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const typewriterText = document.getElementById('typewriter-text');
     let index = 0;
 
-    // Function to hide the full keyboard
+    // Function to show each key of the keyboard
+    function showKeyboard() {
+        if (index < keys.length) {
+            keys[index].style.opacity = 1;
+            index++;
+            setTimeout(showKeyboard, 50); // Speed at which keys appear
+        }
+    }
+
+    // Function to hide the full keyboard except for special keys
     function hideKeyboard() {
         keys.forEach(key => {
             if (!key.classList.contains('special')) {
@@ -19,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         specialKeys.forEach(key => key.style.opacity = 1);
         setTimeout(startTypewriter, 1000); // Start the typewriter effect after displaying the name
     }
-
     // Function to start the typewriter effect
     function startTypewriter() {
         const professions = ["Software Engineer", "Data Scientist", "Product Manager", "Web Developer"];
