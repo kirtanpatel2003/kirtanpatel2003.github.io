@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const keys = document.querySelectorAll('.key');
+    const keys = document.querySelectorAll('.key:not(.special)'); // Only select non-special keys
     const specialKeys = document.querySelectorAll('.special');
     const typewriterText = document.getElementById('typewriter-text');
     let index = 0;
 
-    // Function to show each key of the keyboard
     function showKeyboard() {
         if (index < keys.length) {
             keys[index].style.opacity = 1;
@@ -13,23 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to hide the full keyboard except for special keys
     function hideKeyboard() {
-        keys.forEach(key => {
-            if (!key.classList.contains('special')) {
-                key.style.opacity = 0; // Hide all keys except 'special' keys
-            }
-        });
+        keys.forEach(key => key.style.opacity = 0); // Hide only the non-special keys
         setTimeout(showSpecialKeys, 5000); // Delay before showing 'KIRTAN'
     }
 
-    // Function to show 'KIRTAN' keys horizontally
     function showSpecialKeys() {
-        specialKeys.forEach(key => key.style.opacity = 1);
+        specialKeys.forEach(key => {
+            key.style.display = 'inline-flex'; // Change display to make special keys visible
+            key.style.opacity = 1;
+        });
         setTimeout(startTypewriter, 1000); // Start the typewriter effect after displaying the name
     }
 
-    // Function to start the typewriter effect
     function startTypewriter() {
         const professions = ["Software Engineer", "Data Scientist", "Product Manager", "Web Developer"];
         let current = 0;
@@ -41,30 +36,28 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isDeleting) {
                 if (letterIndex <= 0) {
                     isDeleting = false;
-                    current = (current + 1) % professions.length; // Loop around the array
-                    setTimeout(type, 500); // Pause before typing next profession
+                    current = (current + 1) % professions.length;
+                    setTimeout(type, 500);
                 } else {
                     currentText = professions[current].substring(0, letterIndex--);
                     typewriterText.textContent = currentText;
-                    setTimeout(type, 120); // Speed of deleting
+                    setTimeout(type, 120);
                 }
             } else {
                 if (letterIndex === professions[current].length) {
                     isDeleting = true;
-                    setTimeout(type, 2000); // Pause at the end before deleting
+                    setTimeout(type, 2000);
                 } else {
                     currentText = professions[current].substring(0, ++letterIndex);
                     typewriterText.textContent = currentText;
-                    setTimeout(type, 200); // Speed of typing
+                    setTimeout(type, 200);
                 }
             }
         }
 
-        setTimeout(type, 2000); // Initial delay before starting the effect
+        setTimeout(type, 2000);
     }
 
-    // Start the entire sequence
-    showKeyboard(); // Start by showing the full keyboard
-    // Optionally add a delay here or an event listener to trigger the next step
-    setTimeout(hideKeyboard, 500);
+    showKeyboard();
+    setTimeout(hideKeyboard, 10000); // Ensure there's a long enough delay to show the keyboard first
 });
