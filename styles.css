@@ -44,10 +44,6 @@ body, html {
     height: auto; /* Default height */
 }
 
-.key:not(.special) {
-    visibility: hidden; /* Ensure these aren't taking up space once hidden */
-}
-
 .special {
     background-color: #888; /* Different background for special keys */
     border-color: orange; /* Highlight special keys */
