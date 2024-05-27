@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the entire sequence
     showKeyboard(); // Start by showing the full keyboard
     // Optionally add a delay here or an event listener to trigger the next step
-    setTimeout(hideKeyboard, 10000); // Example: Hide keyboard after 10 seconds
+    setTimeout(hideKeyboard, 5); // Example: Hide keyboard after 10 seconds
 });
