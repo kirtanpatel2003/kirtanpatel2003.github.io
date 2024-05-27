@@ -36,11 +36,16 @@ body, html {
 .key, .special {
     padding: 10px 16px;
     margin: 4px;
-    background-color: #444; /* Standard key background */
+    background-color: #444;
     border: 1px solid #555;
     border-radius: 4px;
-    opacity: 0; /* Start hidden and will fade in */
-    transition: opacity 1s, background-color 0.3s;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s, height 0.5s ease, margin 0.5s ease, padding 0.5s ease; /* Add transitions for collapsing */
+    height: auto; /* Default height */
+}
+
+.key:not(.special) {
+    visibility: hidden; /* Ensure these aren't taking up space once hidden */
 }
 
 .special {
