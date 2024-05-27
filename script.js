@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index < keys.length) {
             keys[index].style.opacity = 1;
             index++;
-            setTimeout(showKeyboard, 50); // Speed at which keys appear
+            setTimeout(showKeyboard, 500); // Speed at which keys appear
         }
     }
 
@@ -81,5 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     showKeyboard();
-    setTimeout(hideKeyboard, 10000); // Ensure there's a long enough delay to show the keyboard first
+    setTimeout(hideKeyboard, 5000); // Ensure there's a long enough delay to show the keyboard first
 });
