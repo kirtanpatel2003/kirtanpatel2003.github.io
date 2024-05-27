@@ -13,7 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function hideKeyboard() {
-        keys.forEach(key => key.style.opacity = 0); // Hide only the non-special keys
+        keys.forEach(key => {
+            key.style.opacity = 0
+            key.style.height = '0';
+            key.style.margin = '0';
+            key.style.padding = '0';
+        }); 
         setTimeout(showSpecialKeys, 5000); // Delay before showing 'KIRTAN'
     }
 
