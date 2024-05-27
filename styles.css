@@ -38,6 +38,7 @@ body, html {
 }
 
 .special {
+    display: flex;
     border-color: orange;
     font-weight: bold;
 }
