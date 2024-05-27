@@ -12,15 +12,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     function hideKeyboard() {
+        // First, make all keys transparent
         keys.forEach(key => {
-            key.style.opacity = 0
-            key.style.height = '0';
-            key.style.margin = '0';
-            key.style.padding = '0';
-        }); 
-        setTimeout(showSpecialKeys, 5000); // Delay before showing 'KIRTAN'
+            key.style.opacity = 0;
+        });
+    
+        // After a delay, collapse the keys to remove their space
+        setTimeout(() => {
+            keys.forEach(key => {
+                key.style.height = '0';
+                key.style.margin = '0';
+                key.style.padding = '0';
+            });
+        }, 1000); // Adjust this delay as needed
+    
+        // Delay before showing 'KIRTAN' might need to be adjusted depending on how the collapse looks
+        setTimeout(showSpecialKeys, 4000); // Account for the collapse delay
     }
+
 
     function showSpecialKeys() {
         specialKeys.forEach(key => {
@@ -64,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     showKeyboard();
-    setTimeout(hideKeyboard, 10000); // Ensure there's a long enough delay to show the keyboard first
+    setTimeout(hideKeyboard, 1000); // Ensure there's a long enough delay to show the keyboard first
 });
