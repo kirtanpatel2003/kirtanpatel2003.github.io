@@ -1,207 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: white;
-      overflow-x: hidden;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .landing-page {
-      display: flex;
-      flex-direction: column;
-      height: 200vh;
-    }
-
-    .purpose-section {
-      height: 100vh;
-      background: black;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .purpose-section h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .scroll-down {
-      margin-top: 1rem;
-      font-size: 1rem;
-      color: gray;
-    }
-
-    .about-section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 0 10%;
-    }
-
-    .photo-container {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .details {
-      max-width: 600px;
-    }
-
-    .details h1 {
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
-
-    .details p {
-      margin: 0.5rem 0;
-    }
-
-    .details a {
-      color: blue;
-      text-decoration: none;
-      margin-right: 1rem;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 2rem;
-      z-index: 10;
-      opacity: 0;
-      transform: translateY(-100%);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .navbar.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .navbar-left {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .navbar-right a {
-      margin-left: 1rem;
-      color: black;
-      text-decoration: none;
-    }
-
-    .navbar-right a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirtan Patel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="background-canvas"></canvas>
-  <div class="landing-page">
-    <div class="purpose-section">
-      <h1>Your Purpose Statement Here</h1>
-      <p>Something to leave a lasting impression.</p>
-      <span class="scroll-down">Scroll Down</span>
-    </div>
-    <div class="about-section">
-      <div class="photo-container">
-        <img src="your-photo-url.jpg" alt="Your Name">
-      </div>
-      <div class="details">
-        <h1>Your Name</h1>
-        <p>Education: Your Degree</p>
-        <p>Skills: List your skills here</p>
-        <p>Email: your.email@example.com</p>
-        <p>Phone: 123-456-7890</p>
-        <p>
-          Socials:
-          <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
-          <a href="https://yourwebsite.com">Website</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar" id="navbar">
-    <span class="navbar-left">Your Name</span>
-    <div class="navbar-right">
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#resume">Resume</a>
-    </div>
-  </nav>
-
-  <script>
-    const canvas = document.getElementById("background-canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const redDots = Array.from({ length: 100 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      dx: (Math.random() - 0.5) * 2,
-      dy: (Math.random() - 0.5) * 2,
-    }));
-
-    const animateDots = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      redDots.forEach((dot) => {
-        dot.x += dot.dx;
-        dot.y += dot.dy;
-
-        if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
-        if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "red";
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animateDots);
-    };
-
-    animateDots();
-
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > window.innerHeight / 2) {
-        navbar.classList.add("visible");
-      } else {
-        navbar.classList.remove("visible");
-      }
-    });
-  </script>
+    <nav id="navbar" class="hidden">
+        <h1>Kirtan Patel</h1>
+    </nav>
+    <header id="landing">
+        <div class="container">
+            <div class="text-side">
+                <h1>I am <span class="highlight">Kirtan Patel</span></h1>
+                <div class="careers">
+                    <span class="career"></span><span class="cursor">|</span>
+                </div>
+            </div>
+            <div class="image-side">
+                <img src="IMG_1045 2.jpg" alt="Kirtan's Face">
+            </div>
+        </div>
+    </header>
+    <section id="resume">
+        <div class="resume-container">
+            <embed src="Kirtan_Resume.pdf" type="application/pdf" width="100%" height="1000px" class="pdf-embeded"/>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
