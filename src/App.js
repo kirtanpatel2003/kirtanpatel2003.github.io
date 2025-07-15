@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import FolderTree from './components/FolderTree';
 import ContentDisplay from './components/ContentDisplay';
 import Terminal from './components/Terminal';
+import GlobeDots from './components/GlobeDots';
 
 function App() {
   const [showWarning, setShowWarning] = useState(true);
@@ -31,19 +32,22 @@ function App() {
 
   return (
     <div className="container">
-      {showWarning ? (
-        <div className="warning">
-          ⚠️ Kirtan's System has been breached. Information is flowing...
-        </div>
-      ) : (
-        <>
-          <div className="content-wrapper">
-            <ContentDisplay selected={selected} />
-            <FolderTree onSelect={handleSelect} />
+      <main className="main-content">
+        {!showWarning && <GlobeDots />}
+        {showWarning ? (
+          <div className="warning">
+            ⚠️ Kirtan's System has been breached. Information is flowing...
           </div>
-          <Terminal logs={logs} />
-        </>
-      )}
+        ) : (
+          <>
+            <div className="content-wrapper">
+              <ContentDisplay selected={selected} />
+              <FolderTree onSelect={handleSelect} />
+            </div>
+            <Terminal logs={logs} />
+          </>
+        )}
+      </main>
     </div>
   );
 }

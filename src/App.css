@@ -6,9 +6,18 @@ body {
 }
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
 }
 
 .warning {
@@ -27,17 +36,19 @@ body {
 .content-display {
   flex: 1;
   padding: 1em;
-  background-color: #111;
   border-right: 1px solid #333;
   white-space: pre-wrap;
   overflow-y: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .folder-tree {
   width: 200px;
   padding: 1em;
-  background-color: #101010;
   border-left: 1px solid #333;
+  position: relative;
+  z-index: 2;
 }
 
 .folder-tree p {
@@ -52,4 +63,15 @@ body {
   border-top: 1px solid #333;
   height: 120px;
   overflow-y: auto;
+}
+
+.globe-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08;
 }
