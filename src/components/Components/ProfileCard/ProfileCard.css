@@ -312,6 +312,7 @@
   border-radius: 15px;
   padding: 12px 14px;
   pointer-events: auto;
+  font-size: 0.85em;
 }
 
 .pc-user-details {
@@ -472,6 +473,10 @@
     left: 15px;
     right: 15px;
     padding: 10px 12px;
+    font-size: 0.75em;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
   }
 
   .pc-mini-avatar {
@@ -521,6 +526,7 @@
     left: 12px;
     right: 12px;
     padding: 8px 10px;
+    font-size: 0.7em;
     border-radius: 50px;
   }
 
@@ -564,6 +570,7 @@
 
   .pc-user-info {
     padding: 6px 8px;
+    font-size: 0.65em;
     border-radius: 50px;
   }
 

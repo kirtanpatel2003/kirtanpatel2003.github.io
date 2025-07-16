@@ -242,7 +242,7 @@ const ProfileCardComponent = ({
               }}
             />
             {showUserInfo && (
-              <div className="pc-user-info" style={{ paddingTop: "1em", textAlign: "center", fontFamily: "monospace", fontSize: "0.9em" }}>
+              <div className="pc-user-info">
                 I specialize in both defensive and offensive cybersecurity, with practical experience in system hardening, vulnerability assessment, and digital forensics. I focus on building secure, resilient systems and proactively identifying threats to protect digital environments.
               </div>
             )}

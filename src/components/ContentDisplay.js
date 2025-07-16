@@ -34,8 +34,6 @@ export default function ContentDisplay({ selected }) {
 - Intro to Networking
 - Artificial Intelligence I
 - Database Systems
-- Languages and Automata
-- Software Engineering I & II
 - Computer Design
 - Systems Programming
 - Programming Language Concepts
