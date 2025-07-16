@@ -75,3 +75,33 @@ body {
   pointer-events: none;
   opacity: 0.08;
 }
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .folder-tree {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 1px solid #333;
+    padding: 0.5em;
+    justify-content: center;
+    background-color: #0d0d0d;
+    gap: 1em;
+  }
+
+  .folder-tree p {
+    margin: 0 1em;
+    white-space: nowrap;
+  }
+
+  .content-display {
+    flex: 1;
+    padding: 1em;
+    border-right: none;
+  }
+}
