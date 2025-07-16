@@ -41,7 +41,9 @@ function App() {
         ) : (
           <>
             <div className="content-wrapper">
-              <ContentDisplay selected={selected} />
+              <div style={{ flex: 1, overflowY: 'auto', maxHeight: '70vh' }}>
+                <ContentDisplay selected={selected} />
+              </div>
               <FolderTree onSelect={handleSelect} />
             </div>
             <Terminal logs={logs} />

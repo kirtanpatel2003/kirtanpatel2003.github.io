@@ -76,6 +76,13 @@ body {
   opacity: 0.08;
 }
 
+.profile-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
