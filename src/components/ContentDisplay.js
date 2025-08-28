@@ -235,7 +235,7 @@ export default function ContentDisplay({ selected }) {
     about: `👋 Hi, I'm Kirtan Patel — cybersecurity-minded software engineer. MS-CS @ UIC.
 I break things in labs, fix them in code, and teach through write-ups.`,
     "skills-tools": <SkillsWithLogoLoop />,
-    "experience-projects": <Projects />,
+    "projects": <Projects />,
     htb: <HTB />,
     connect: `📫 official.kirtan13@gmail.com
 🔗 linkedin.com/in/kirtanpatel13

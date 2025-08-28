@@ -31,7 +31,7 @@ export default function FolderTree({ onSelect }) {
     <div className="folder-tree">
       <p onClick={() => onSelect("about")}>📁 about</p>
       <p onClick={() => onSelect("skills-tools")}>📁 skills-tools</p>
-      <p onClick={() => onSelect("projects")}>📁 experience-projects</p>
+      <p onClick={() => onSelect("projects")}>📁 projects</p>
       {/* <p onClick={() => onSelect("recognition")}>📁 recognition</p> */}
       <p onClick={() => onSelect("connect")}>📁 connect</p>
 
