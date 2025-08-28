@@ -240,7 +240,7 @@ I break things in labs, fix them in code, and teach through write-ups.`,
     connect: `📫 official.kirtan13@gmail.com
 🔗 linkedin.com/in/kirtanpatel13
 💻 github.com/kirtanpatel2003
-📄 Résumé: put Kirtan_Resume.pdf in /public and link it from your FolderTree`,
+📄 Résumé: click resume.pdf on the sidebar`,
   };
 
   return (
