@@ -1,0 +1,55 @@
+/* Wrapper just keeps your existing class semantic */
+.positionRelative { position: relative; }
+
+/* Header */
+.htb-header { margin-bottom: 24px; }
+.htb-link {
+  display: inline-flex; gap: 12px; align-items: center;
+  text-decoration: none; color: inherit;
+}
+.htb-title { margin: 0; font-size: 24px; font-weight: 600; }
+
+/* Rank pill */
+.htb-rank {
+  display: inline-block; margin-top: 8px; padding: 6px 10px;
+  border-radius: 8px; font-size: 14px;
+  background: rgba(62,255,0,0.12); color: #39ff14; border: 1px solid rgba(62,255,0,0.25);
+}
+
+/* Stats */
+.htb-stats {
+  margin-top: 16px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  padding: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.htb-stats table { width: 100%; min-width: 520px; border-collapse: collapse; }
+.htb-stats th {
+  font-size: 12px; opacity: 0.8; padding: 0 24px 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  text-align: center; white-space: nowrap;
+}
+.htb-stats th:last-child { padding-right: 0; }
+.htb-stats td {
+  font-size: 22px; font-weight: 600; padding: 10px 24px 0 0;
+  text-align: center;
+}
+.htb-stats td:last-child { padding-right: 0; }
+/* vertical separators */
+.htb-stats thead th:not(:last-child),
+.htb-stats tbody td:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ScrollStack cards */
+.htb-card {
+  display: block; text-decoration: none; color: inherit;
+  border-radius: 16px; border: 1px solid rgba(255,255,255,0.12);
+  background: #ffffff; padding: 16px;
+}
+.htb-card-row { display: flex; align-items: center; gap: 16px; }
+.htb-thumb {
+  width: 96px; height: 60px; border-radius: 12px; object-fit: cover; display: block;
+}
+.htb-card-title { font-weight: 800; font-size: 20px; color: #39ff14; line-height: 1.25; }
+.htb-card-sub { color: #6b7280; font-size: 15px; line-height: 1.25; }
