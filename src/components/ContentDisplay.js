@@ -190,9 +190,9 @@ export default function ContentDisplay({ selected }) {
               </thead>
               <tbody>
                 <tr>
-                  <td>#909</td>
-                  <td>7</td>
-                  <td>6</td>
+                  <td>#865</td>
+                  <td>10</td>
+                  <td>9</td>
                 </tr>
               </tbody>
             </table>
