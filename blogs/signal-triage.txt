@@ -1,0 +1,6 @@
+# Signal Triage Notes
+Feb 04 2025 — SIEM + Zeek + Suricata
+
+Blended signals from Okta + CrowdStrike looked noisy until I replayed packet captures in a lab. Convergence of JA3 fingerprints and DNS tunnels exposed a cobalt beacon that only woke up during shipping hours.
+
+Takeaway: enrich alerts with environmental context first, then automate containment once confidence clears the 80% mark.

@@ -1,0 +1,6 @@
+# Edge Hardening Checklist
+Dec 18 2024 — Nginx • WAF • Terraform
+
+Hardened a public edge by templating WAF rules and mutual TLS into Terraform modules. Added GitHub Actions smoke tests that replay OWASP top 10 payloads before each deploy.
+
+Next rev will include automatic CVE diffing against the AMI manifest.
