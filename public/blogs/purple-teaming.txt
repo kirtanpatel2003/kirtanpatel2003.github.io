@@ -1,0 +1,6 @@
+# Purple Teaming Sprint
+Jan 22 2025 — MITRE ATT&CK • Atomic Red
+
+Mapped business-critical APIs against ATT&CK TTPs and emulated credential access paths with Atomic Red. Built TypeScript harness to snapshot detections before/after each control tweak.
+
+Outcome: bumped lateral movement detection from 42% → 88% without shipping new hardware.
