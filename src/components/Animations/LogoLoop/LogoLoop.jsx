@@ -272,7 +272,7 @@ export const LogoLoop = memo(
       );
 
       return (
-        <li className="logoloop__item" key={key} role="listitem">
+        <li className="logoloop__item" key={key}>
           {itemContent}
         </li>
       );
@@ -284,7 +284,6 @@ export const LogoLoop = memo(
           <ul
             className="logoloop__list"
             key={`copy-${copyIndex}`}
-            role="list"
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >

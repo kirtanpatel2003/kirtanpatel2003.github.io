@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 function DotSphere() {
@@ -14,7 +13,6 @@ function DotSphere() {
         const points = [];
 
         data.features.forEach(feature => {
-          const coords = feature.geometry.coordinates;
 
           const processCoords = (coordSet) => {
             coordSet.forEach(polygon => {
@@ -122,7 +120,6 @@ export default function GlobeDots() {
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <DotSphere />
-        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );

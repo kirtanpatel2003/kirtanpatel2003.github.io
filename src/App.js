@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import ProfileCard from "./components/Components/ProfileCard/ProfileCard.jsx";
 import LogoLoop from "./components/Animations/LogoLoop/LogoLoop.jsx";
-import BlogSection from "./components/BlogSection";
+// import BlogSection from "./components/BlogSection";
 import Terminal from "./components/Terminal";
 import GlobeDots from "./components/GlobeDots";
 import "./components/Animations/LogoLoop/LogoLoop.css";
