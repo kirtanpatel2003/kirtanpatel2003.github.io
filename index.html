@@ -5,22 +5,54 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0d" />
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
     <meta
       name="description"
-      content="Kirtan Patel — full-stack developer and security practitioner. LLM security, cryptography, and systems that actually work."
+      content="Kirtan Patel — security analysis and forward deployed engineering. Author of llm-thorn, an open-source LLM security proxy on PyPI. Chicago, IL."
     />
+    <link rel="canonical" href="https://patelkirtan.com/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://patelkirtan.com/" />
+    <meta property="og:title" content="Kirtan Patel — Security & Forward Deployed Engineering" />
+    <meta
+      property="og:description"
+      content="Author of llm-thorn, an open-source LLM security proxy. Four years in tier-2 IT operations. Open to security analyst and forward deployed engineer roles."
+    />
+    <meta property="og:image" content="https://patelkirtan.com/logo512.png" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kirtan Patel",
+        "url": "https://patelkirtan.com/",
+        "jobTitle": "Security & Forward Deployed Engineering",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL" },
+        "sameAs": [
+          "https://github.com/kirtanpatel2003",
+          "https://www.linkedin.com/in/kirtanpatel2003",
+          "https://app.hackthebox.com/profile/2477480"
+        ]
+      }
+    </script>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Kirtan Patel</title>
-    <script type="module" crossorigin src="/assets/index-Bprp1VJ5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C_A62P7B.css">
+    <title>Kirtan Patel — Security & Forward Deployed Engineering</title>
+    <script type="module" crossorigin src="/assets/index-DFsJy6mH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D5p8l-Lu.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
