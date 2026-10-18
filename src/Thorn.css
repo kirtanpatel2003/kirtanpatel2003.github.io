@@ -1,0 +1,484 @@
+/* ────────────────────────────────────────────────
+   Thorn — pop-art cactus guide
+   Comic palette stays fixed across themes; only the
+   bubble's hard shadow swaps so it reads on dark.
+   ──────────────────────────────────────────────── */
+.thorn {
+  --pop-ink: #16161a;
+  --pop-shadow: #16161a;
+  --pop-yellow: #ffd60a;
+  --pop-red: #ff4136;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  height: calc(var(--thorn-size) * 1.2);
+  z-index: 40;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .thorn {
+    --pop-shadow: #ff7a45;
+  }
+}
+
+:root[data-theme="dark"] .thorn {
+  --pop-shadow: #ff7a45;
+}
+
+/* ── The cactus ── */
+.thorn-buddy {
+  position: absolute;
+  bottom: 0;
+  width: var(--thorn-size);
+  height: calc(var(--thorn-size) * 1.2);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: left 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+  filter: drop-shadow(3px 3px 0 rgba(22, 22, 26, 0.18));
+}
+
+/* muted Thorn steps back so he doesn't sit on top of content */
+.thorn.is-asleep .thorn-buddy {
+  opacity: 0.6;
+}
+
+.thorn.is-asleep .thorn-buddy:hover,
+.thorn.is-asleep .thorn-buddy:focus-visible {
+  opacity: 1;
+}
+
+.thorn-buddy:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.thorn-flip,
+.thorn-hop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.thorn-flip {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.thorn-hop {
+  transform-origin: 50% 100%;
+  animation: thorn-breathe 3.2s ease-in-out infinite;
+}
+
+.thorn.is-moving .thorn-hop {
+  animation: thorn-hop 0.34s ease-in-out infinite;
+}
+
+.thorn-buddy:hover .thorn-hop {
+  animation: thorn-wiggle 0.5s ease-in-out;
+}
+
+@keyframes thorn-breathe {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.025, 0.98);
+  }
+}
+
+@keyframes thorn-hop {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg) scale(1.03, 0.97);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg) scale(0.97, 1.03);
+  }
+}
+
+@keyframes thorn-wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+/* face states */
+.thorn-eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: thorn-blink 4.6s infinite;
+}
+
+@keyframes thorn-blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+.thorn-sleepy,
+.thorn-mouth {
+  display: none;
+}
+
+.thorn.is-asleep .thorn-eyes {
+  display: none;
+}
+
+.thorn.is-asleep .thorn-sleepy {
+  display: inline;
+}
+
+.thorn.is-talking .thorn-smile {
+  display: none;
+}
+
+.thorn.is-talking .thorn-mouth {
+  display: inline;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: thorn-talk 0.16s ease-in-out infinite alternate;
+}
+
+@keyframes thorn-talk {
+  from {
+    transform: scaleY(0.35);
+  }
+  to {
+    transform: scaleY(1.15);
+  }
+}
+
+.thorn.is-talking .thorn-arm-r {
+  transform-box: view-box;
+  transform-origin: 64px 54px;
+  animation: thorn-wave 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes thorn-wave {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+/* speed lines trail behind while walking (mirrors with the flip) */
+.thorn-lines {
+  position: absolute;
+  top: 34%;
+  right: 88%;
+  display: grid;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.thorn-lines i {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--pop-ink);
+}
+
+.thorn-lines i:nth-child(1) {
+  width: 16px;
+  margin-left: 6px;
+}
+
+.thorn-lines i:nth-child(2) {
+  width: 22px;
+}
+
+.thorn-lines i:nth-child(3) {
+  width: 12px;
+  margin-left: 10px;
+}
+
+:root[data-theme="dark"] .thorn-lines i {
+  background: var(--text-dim);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .thorn-lines i {
+    background: var(--text-dim);
+  }
+}
+
+.thorn.is-moving .thorn-lines {
+  opacity: 1;
+}
+
+/* "tap me" badge for phones */
+.thorn-hint {
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 2.5px solid var(--pop-ink);
+  border-radius: 50%;
+  background: var(--pop-yellow);
+  box-shadow: 2px 2px 0 var(--pop-red);
+  font-family: "Bangers", var(--font-sans);
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--pop-ink);
+  animation: thorn-nudge 1.6s ease-in-out infinite;
+}
+
+@keyframes thorn-nudge {
+  0%,
+  70%,
+  100% {
+    transform: scale(1) rotate(0);
+  }
+  80% {
+    transform: scale(1.18) rotate(-10deg);
+  }
+  90% {
+    transform: scale(1.18) rotate(10deg);
+  }
+}
+
+.thorn-zz {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  font-family: "Bangers", var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text);
+  animation: thorn-float 2.4s ease-in-out infinite;
+}
+
+.thorn-zz small {
+  font-size: 0.8em;
+  margin-left: 1px;
+}
+
+@keyframes thorn-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* ── Speech bubble ── */
+.thorn-bubble {
+  position: absolute;
+  bottom: calc(var(--thorn-size) * 1.2 + 18px);
+  padding: 1.25rem 1.05rem 0.8rem;
+  background: #fff;
+  color: var(--pop-ink);
+  border: 3px solid var(--pop-ink);
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--pop-shadow);
+  pointer-events: auto;
+  transform-origin: var(--tail-x) 100%;
+  animation: thorn-pop 0.38s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+/* halftone wash in the corner */
+.thorn-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background-image: radial-gradient(rgba(255, 65, 54, 0.28) 1.3px, transparent 1.5px);
+  background-size: 7px 7px;
+  -webkit-mask-image: linear-gradient(135deg, transparent 55%, #000 100%);
+  mask-image: linear-gradient(135deg, transparent 55%, #000 100%);
+  pointer-events: none;
+}
+
+/* tail pointing at Thorn */
+.thorn-bubble::after {
+  content: "";
+  position: absolute;
+  left: var(--tail-x);
+  bottom: -12px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-right: 3px solid var(--pop-ink);
+  border-bottom: 3px solid var(--pop-ink);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@keyframes thorn-pop {
+  from {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.thorn-word {
+  position: absolute;
+  top: -19px;
+  left: 14px;
+  padding: 0.18rem 0.65rem 0.08rem;
+  background: var(--pop-yellow);
+  border: 3px solid var(--pop-ink);
+  box-shadow: 3px 3px 0 var(--pop-red);
+  font-family: "Bangers", var(--font-sans);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--pop-ink);
+  transform: rotate(-5deg);
+}
+
+.thorn-line {
+  position: relative;
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* full text reserves the height; typed text draws over it */
+.thorn-sizer {
+  visibility: hidden;
+}
+
+.thorn-typed {
+  position: absolute;
+  inset: 0;
+}
+
+.thorn-caret {
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: var(--pop-ink);
+  animation: thorn-caret 0.7s steps(1) infinite;
+}
+
+@keyframes thorn-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.thorn-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.thorn-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.thorn-count {
+  margin-right: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #6e6e77;
+}
+
+.thorn-actions button {
+  height: 28px;
+  padding: 0 0.6rem;
+  border: 2px solid var(--pop-ink);
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 2px 2px 0 var(--pop-ink);
+  color: var(--pop-ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.thorn-actions button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--pop-ink);
+}
+
+.thorn-actions button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--pop-ink);
+}
+
+.thorn-actions .thorn-more {
+  background: var(--pop-yellow);
+}
+
+.thorn-actions button:focus-visible {
+  outline: 2px solid var(--pop-red);
+  outline-offset: 2px;
+}
+
+/* ── Calmer for people who asked for less motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .thorn-buddy,
+  .thorn-flip {
+    transition: none;
+  }
+
+  .thorn-hop,
+  .thorn-buddy:hover .thorn-hop,
+  .thorn-eyes,
+  .thorn-hint,
+  .thorn-zz,
+  .thorn-caret,
+  .thorn.is-talking .thorn-mouth,
+  .thorn.is-talking .thorn-arm-r {
+    animation: none;
+  }
+
+  .thorn-bubble {
+    animation: none;
+  }
+}
+
+@media print {
+  .thorn {
+    display: none;
+  }
+}
