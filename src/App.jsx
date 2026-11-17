@@ -13,12 +13,12 @@ const navLinks = [
   { id: "opensource", label: "Open Source" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "htb", label: "Hack The Box" },
+  { id: "htb", label: "HTB & CTF" },
   { id: "contact", label: "Contact" },
 ];
 
 const profileSpec = [
-  { key: "Targeting", value: "Security Analyst", sub: "Forward Deployed Engineer" },
+  { key: "Targeting", value: "Security Engineer", sub: "Forward Deployed Engineer" },
   { key: "Based in", value: "Chicago, IL", sub: "Remote or on-site" },
   {
     key: "Maintaining",
@@ -39,7 +39,7 @@ const heroStats = [
 const focusAreas = [
   {
     icon: "shield",
-    label: "Security Analysis",
+    label: "Security Engineering",
     title: "Reading systems for where policy and behavior disagree.",
     body: "Detection, triage, and evidence. I care less about what a system is supposed to do than what it actually does, and I write findings that hold up when someone checks them.",
     proof: [
@@ -128,6 +128,7 @@ const openSourceEntries = [
     meta: "Python · Ollama · Streamlit · scikit-learn · Laminar",
     tags: ["Python", "LLM Security", "Red Team", "Detection"],
     body: "Red-team and defensive monitor stack for the Co-Authoring Jailbreak (CoJP) LLM vulnerability. A two-armed attack pipeline (direct prompt vs CoJP-framed prompt) runs across multiple local target models, with a separate judge model scoring each response on the HarDBench 1–5 harmfulness rubric. A monitor trained on the resulting dataset (nomic-embed-text embeddings + logistic regression) is evaluated on held-out AdvBench (520 prompts) and HarDBench (400 prompts) splits and benchmarked against a zero-shot llama3 baseline. MIT licensed and fully local, so every result reproduces end to end.",
+    note: "Result: across 57 runs on three local models (Qwen3, Gemma2, Phi3), CoJP framing raised attack success from 11% to 67%.",
     links: [],
   },
 ];
@@ -135,26 +136,27 @@ const openSourceEntries = [
 const workExperience = [
   {
     role: "IT Helpdesk Support Manager",
-    org: "Technology Solutions, Office of the Vice Chancellor for Innovation — UIC",
+    org: "UIC Technology Solutions",
     location: "Chicago, IL",
     period: "Dec 2024 – Present",
     current: true,
     bullets: [
-      "Lead the IT helpdesk support team, owning tier-2 escalation in TeamDynamix (TDX) across classroom networking, AV systems, and campus-wide technology while coaching specialists through complex tickets to resolution.",
-      "Assess and provision faculty, staff, and student devices and access, applying least-privilege and safe-configuration judgment to hardware, software, and account provisioning across campus.",
-      "Co-author and maintain the team's troubleshooting documentation, translating recurring technical issues into clear, repeatable resolution steps that keep support consistent and shorten new-hire ramp-up.",
-      "Serve on the hiring team for support specialists, interviewing and evaluating candidates for technical skill and the ability to support non-technical users, then onboarding new hires onto the team.",
+      "Manage the classroom technology support team for East Campus, owning tier-2 escalation in TeamDynamix (TDX) for AV, lecture capture, and classroom networking and coaching specialists through complex tickets to resolution.",
+      "Troubleshoot classroom AV end to end, from projectors, audio, and Echo360 lecture capture down to the network switches behind them, resolving switch issues directly and getting rooms back in service to protect class time.",
+      "Step in at the IT helpdesk beyond the classroom technology role, restoring Windows and macOS on faculty, staff, and student laptops and guiding users campus-wide through multi-factor authentication (MFA) transitions and setup.",
+      "Manage a fleet of 30 printers across East Campus; consolidated to 24 active units, reducing units down at any given time from roughly 6 to 1.",
+      "Serve on the hiring team for support specialists, interviewing candidates for technical skill and the ability to support non-technical users, then onboard new hires and co-author the team's troubleshooting documentation.",
     ],
   },
   {
     role: "Classroom Technology Support Specialist",
-    org: "Technology Solutions, Office of the Vice Chancellor for Innovation — UIC",
+    org: "UIC Technology Solutions",
     location: "Chicago, IL",
     period: "Aug 2022 – Dec 2024",
     bullets: [
-      "Kept instruction running across East Campus classrooms and lecture halls, supporting AV systems, projectors, audio, and Echo360 lecture capture and resolving live issues quickly to protect class time.",
-      "Deployed and configured computer labs for courses and campus events, handling software installs and access provisioning.",
-      "Trained and mentored incoming specialists to independent troubleshooting through shadowing, hands-on practice, and feedback on real tickets.",
+      "Kept instruction running across East Campus classrooms and lecture halls, supporting AV systems, projectors, audio, and Echo360 lecture capture and resolving live issues on the spot so classes started and stayed on time.",
+      "Deployed and configured computer labs for courses and campus events, handling software installs and access setup.",
+      "Trained and mentored new specialists to independent troubleshooting via shadowing and feedback on real tickets.",
     ],
   },
 ];
@@ -184,7 +186,7 @@ const projectEntries = [
   },
   {
     title: "Mini Tor Anonymity Network",
-    meta: "Python · TCP Sockets · Curve25519 · AES-256-GCM · HKDF",
+    meta: "Python · TCP Sockets · X25519 · AES-256-GCM · HKDF",
     tags: ["Cryptography", "Networking", "Systems"],
     href: "https://github.com/kirtanpatel2003/CS588-Tor-Browser",
     body: "Tor's three-hop onion routing rebuilt from scratch as six independent processes over real TCP, with telescoping EXTEND cells so the client only ever connects to the guard. The whole cryptographic stack is pure Python with no third-party crypto libraries (SHA-256, HMAC, HKDF, X25519 via Montgomery ladder, AES-256, AES-256-GCM), each verified against published NIST and IETF test vectors.",
@@ -232,8 +234,19 @@ const htbProfile = {
   ],
 };
 
+const ctfProfile = {
+  headline: "Top 14%",
+  event: "BroncoCTF 2026",
+  stats: [
+    { label: "Placing", value: "103 / 753" },
+    { label: "Challenges Solved", value: "40 / 45" },
+    { label: "Points", value: "2,169" },
+  ],
+  note: "I compete as trACEr with team DevBrows. Categories worked: binary exploitation (heap, tcache poisoning), memory forensics (Volatility 3), web exploitation (auth bypass via an SMF CVE, XSS), Z3 constraint solving, and hash cracking. Sanctioned competition infrastructure only.",
+};
+
 const skillGroups = [
-  { label: "Languages", items: ["Python", "Go", "Bash", "SQL", "JavaScript"] },
+  { label: "Languages", items: ["Python", "Go", "Bash", "SQL", "JavaScript", "TypeScript"] },
   {
     label: "Offensive Tooling",
     items: ["Nmap", "Burp Suite", "Metasploit", "sqlmap", "Hashcat", "BloodHound", "Impacket", "Wireshark"],
@@ -274,7 +287,7 @@ const skillGroups = [
 const credentials = [
   {
     name: "M.S. Computer Science",
-    detail: "University of Illinois Chicago · Network Security, Cryptography, Computer System Security",
+    detail: "University of Illinois Chicago · Focus: offensive security and AI red-teaming · Network Security, Cryptography, Computer System Security",
     date: "Dec 2026",
   },
   {
@@ -282,8 +295,10 @@ const credentials = [
     detail: "University of Illinois Chicago · Dean's List, Fall 2023 & Fall 2024",
     date: "May 2025",
   },
-  { name: "Foundations of Cybersecurity", detail: "Google — Coursera", date: "Oct 2024" },
-  { name: "Introduction to Networking", detail: "NVIDIA — Coursera", date: "Oct 2024" },
+  { name: "MECPA Log360 Associate", detail: "ManageEngine", date: "Nov 2026" },
+  { name: "AI Fluency: Framework & Foundations", detail: "Anthropic", date: "Jul 2026" },
+  { name: "Foundations of Cybersecurity", detail: "Google · Coursera", date: "Oct 2024" },
+  { name: "Introduction to Networking", detail: "NVIDIA · Coursera", date: "Oct 2024" },
 ];
 
 const socialLinks = [
@@ -584,7 +599,7 @@ function App() {
               <p className="status-chip reveal is-visible">
                 <span className="status-dot" />
                 <span>
-                  Open to <strong>Security Analyst</strong> &amp;{" "}
+                  Open to <strong>Security Engineer</strong> &amp;{" "}
                   <strong>Forward Deployed Engineer</strong> roles
                 </span>
               </p>
@@ -594,7 +609,7 @@ function App() {
                 and shipping <span className="accent">what closes&nbsp;them.</span>
               </h1>
               <p className="lede reveal is-visible">
-                I'm Kirtan Patel. I work where security meets deployment: I author{" "}
+                I'm Kirtan Patel, a security practitioner working where security meets deployment. I author{" "}
                 <span className="nowrap">llm-thorn</span>, an open-source LLM security proxy on PyPI, and I've spent four years in tier-2 IT
                 operations at the University of Illinois Chicago, triaging escalations and putting
                 tools in front of the people who use them.
@@ -649,7 +664,7 @@ function App() {
         <section id="focus" className="section band">
           <div className="container">
             <SectionHead no="01" eyebrow="Focus" title="Where I fit on your team">
-              I'm targeting security analyst and forward deployed engineering roles. Here's the
+              I'm targeting security engineering and forward deployed engineering roles. Here's the
               evidence for each.
             </SectionHead>
             <div className="focus-grid">
@@ -738,9 +753,10 @@ function App() {
         {/* ── Experience ── */}
         <section id="experience" className="section band">
           <div className="container">
-            <SectionHead no="03" eyebrow="Experience" title="Four years running university IT">
-              Tier-2 operations at the University of Illinois Chicago: escalations, access
-              provisioning, documentation, and the people on the other end of every ticket.
+            <SectionHead no="03" eyebrow="Experience" title="Four years in university IT">
+              Classroom technology and tier-2 support at the University of Illinois Chicago:
+              escalations, AV and networking, client devices, and the people on the other end of
+              every ticket.
             </SectionHead>
             <div className="timeline">
               {workExperience.map((job) => (
@@ -835,7 +851,7 @@ function App() {
         {/* ── Hack The Box ── */}
         <section id="htb" className="section band">
           <div className="container">
-            <SectionHead no="05" eyebrow="Proof of work" title="Hack The Box">
+            <SectionHead no="05" eyebrow="Proof of work" title="Hack The Box & CTF">
               Hands-on offensive practice: enumerate, exploit, escalate, write it up. Knowing how
               attacks land is what makes the alerts make sense.
             </SectionHead>
@@ -854,6 +870,19 @@ function App() {
                 View profile
                 <Icon name="arrow" />
               </ExternalLink>
+            </div>
+            <div className="card htb-card ctf-card reveal">
+              <div className="stat">
+                <span className="htb-rank-value">{ctfProfile.headline}</span>
+                <span className="stat-label">{ctfProfile.event}</span>
+              </div>
+              {ctfProfile.stats.map((s) => (
+                <div key={s.label} className="stat">
+                  <span className="stat-value">{s.value}</span>
+                  <span className="stat-label">{s.label}</span>
+                </div>
+              ))}
+              <p className="ctf-note">{ctfProfile.note}</p>
             </div>
           </div>
         </section>
@@ -911,7 +940,7 @@ function App() {
                 Let's work <span className="accent">together.</span>
               </h2>
               <p>
-                Hiring for a security analyst or forward deployed role, or maintaining a project I
+                Hiring for a security engineer or forward deployed role, or maintaining a project I
                 can help with? Email is the fastest way to reach me.
               </p>
               <div className="email-row">
